@@ -5,7 +5,7 @@
  * @Description: vscode技巧
 -->
 
-## VScode 技巧
+## VsCode 技巧
 
 ### 场景一
 

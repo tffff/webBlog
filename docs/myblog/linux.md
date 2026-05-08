@@ -13,7 +13,7 @@ date: 2022-01-13 20:20:31
 
    ### linux 系统目录功能概述
 
-   <img src='../../assets/node/linux.png'>
+   <img src='../assets/node/linux.png'>
 
    - `etc` 配置文件（系统和程序的配置文件）
    - `boot` 不同版本的内核文件
@@ -29,7 +29,7 @@ date: 2022-01-13 20:20:31
    - `sbin` 可执行文件
    - `tmp` 临时文件(关闭之后会清空)
 
-   <img src='../../assets/node/linux-etc.png'>
+   <img src='../assets/node/linux-etc.png'>
 
    -r 可读 ，-w 可写，-x 可执行
 
@@ -266,7 +266,7 @@ http {
 :tada: :100:
 
 <!-- ![nginx](/node/nginx.png) -->
-<img src='../../assets/node/nginx.png'>
+<img src='../assets/node/nginx.png'>
 
 ### nginx 启动停止命令
 

@@ -1,9 +1,8 @@
 ---
-title: SVN和Git安装和使用
-date: 2022-01-29 15:10:11
+title: 命令行操作合集
 ---
 
-## svn 命令行
+## 1、svn 命令行
 
 ### 首先在 CentOS 或者 MacOs 上下载 svn
 
@@ -58,7 +57,7 @@ Beyond Compare -> svn resolved。
 svn copy 主干SVN地址 /tags/2017
 ```
 
-## git 命令行
+## 2、git 命令行
 
 mac 电脑默认安装 git，windows 需要下载对应的插件安装
 
@@ -215,7 +214,7 @@ git log
 git diff [source branch] [target branch]
 ```
 
-## git 多分支开发
+### 25、git 多分支开发
 
 ```bash
 # 创建自己的分子并把远程分支的代码拉到本地
@@ -244,7 +243,7 @@ git pull
 git merge [自己的开发分支]
 ```
 
-## git 撤销 pull 或者 commit 操作
+### 26、git 撤销 pull 或者 commit 操作
 
 ```bash
 # 可以显示当前分支所有提交过的版本信息，不包括已经被删除的 commit 记录和reset的操作
@@ -269,7 +268,7 @@ git reset --hard HEAD~1
 
 ```
 
-## git 修改分支名称
+### 27、git 修改分支名称
 
 ```bash
 # 1、本地分支重命名(还没有推送到远程)
@@ -285,7 +284,7 @@ git branch --set-upstream-to origin/newName
 
 ```
 
-## git 基于某个分支的 commit 拉分支
+### 28、git 基于某个分支的 commit 拉分支
 
 ```bash
 # 1、查看commitid
@@ -296,7 +295,7 @@ git checkout <commitid> -b test
 git push origin test
 ```
 
-## git设置中文名
+### 29、git设置中文名
 ```bash
 git config --global user.name "xxx(新用户名)"
 git config --global user.password "xxx(新密码)"
@@ -307,7 +306,7 @@ git config user.name
 git config user.email
 ```
 
-## nrm 切换源
+## 3、nrm 切换源
 
 ```bash
 # 1. 下载 nrm
@@ -320,4 +319,72 @@ nrm use 名字
 nrm ls
 # 5. 删除源地址
 nrm del 名字
+```
+## 4、nginx 命令
+- 启动 `systemctl start nginx`
+- 关闭 `systemctl stop nginx`
+- 重启 `systemctl restart nginx`
+
+- `man` 软件名 可以查看其有的各种参数 有空或者用时再查看其具体含义
+
+- `nginx -t`检查配置文件格式是否正确
+- `-c` : 指定配置文件的新路径(软件默认有一个路径)
+- `-c filename` : `set configuration file (default: /etc/nginx/nginx.conf)`
+- `-v` : 打印版本号
+- `-g` : 设置一个全局的 `Nginx` 配置项
+  - `[root@web01 ~]# nginx -g 'daemon off;'`
+- `-p` ： 指定 `nginx` 的工作目录(后边有一个默认的工作目录)
+- `-e`: 指定错误日志路径
+- `-V` ： 打印版本号和配置项 及安装的所有模块
+- `-T` ： 测试配置文件并启动
+- `-q` ：打印错误日志
+- `-s` : 操作进程
+  - `stop` ：停止(慢慢停掉)
+  - `quit` ： 退出
+  - `reopen` ：重启---关机后启动
+  - `reload` ：在不重启 `nginx` 情况下,重新加载配置文件
+
+
+## 5、mac 执行命令
+### 安装 rar 解压命令
+
+#### 安装 unrar
+
+```bash
+[root@localhost] # brew install unrar
+```
+
+#### cd 到对应要解压的目录下面，执行下列命令
+
+```bash
+[root@localhost] # unrar x 需解压的文件目录
+```
+
+#### 安装 svn 命令行
+
+由于现在 10.15 以上的版本没有自带 svn,所以需要自行下载
+
+```bash
+#安装brew,如果报错和xcode相关需要先安装xcode
+/bin/zsh -c "$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)"
+
+#brew -v 查看版本
+brew -v
+
+#如果没有安装brew,要先安装brew
+brew install svn
+
+#查看svn 是否安装成功
+svn help
+
+```
+
+### mac 显示/隐藏文件
+
+```bash
+# 在终端中输代码即可显示隐藏文件
+[localhost]# defaults write com.apple.finder AppleShowAllFiles -boolean true;killall Finder
+
+# 在终端中输代码即可隐藏隐藏文件
+[localhost]# defaults write com.apple.finder AppleShowAllFiles -boolean false;killall Finder
 ```

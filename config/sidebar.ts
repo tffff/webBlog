@@ -1,25 +1,16 @@
 const sidebar = {
-  // '/myblog':[{
-  //   title:'开发基础',
-  //   children:[
-  //     {title:'插件',link:'/myblog/devneeds/plugins'},
-  //   ]
-  // }]
   '/myblog': [
     {
       title: '开发基础',
       children: [
-        {title:'插件',link:'/myblog/devneeds/plugins'},
-        {title:'nginx',link:'/myblog/devneeds/nginx'},
-        {title:'svn',link:'/myblog/devneeds/svn'},
-        {title:'mac安装',link:'/myblog/devneeds/macinstall'},
-        {title:'ios',link:'/myblog/devneeds/ios'},
-        {title:'ios安装',link:'/myblog/devneeds/iosinstall'},
-        {title:'jsutils',link:'/myblog/devneeds/jsutils'},
-        {title:'vscode',link:'/myblog/devneeds/vscode'},
-        {title:'gitlab',link:'/myblog/devneeds/gitlab'},
-        {title:'docker',link:'/myblog/devneeds/docker'},
-        {title:'reactnative',link:'/myblog/devneeds/reactnative'},
+        {title:'命令行操作合集',link:'/myblog/commandline'},
+        {title:'前端插件',link:'/myblog/plugins'},
+        {title:'ios开发流程必备',link:'/myblog/ios'},
+        {title:'js 工具类',link:'/myblog/jsutils'},
+        {title:'vscode',link:'/myblog/vscode'},
+        {title:'gitlab',link:'/myblog/gitlab'},
+        {title:'docker',link:'/myblog/docker'},
+        {title:'reactnative坑',link:'/myblog/reactnative'},
       ],
     },
     {
@@ -80,26 +71,26 @@ const sidebar = {
     {
       title: '性能优化',
       children: [
-        {title:'performance',link:'/myblog/performance/performance'},
-        {title:'fp',link:'/myblog/performance/fp'},
-        {title:'chromebrower',link:'/myblog/performance/chromebrower'},
-        {title:'nodeperformance',link:'/myblog/performance/nodeperformance'},
+        {title:'网页性能优化相关',link:'/myblog/performance'},
+        {title:'首屏性能相关名词',link:'/myblog/fp'},
+        {title:'现代浏览器渲染',link:'/myblog/chromebrower'},
+        {title:'NodeJS性能优化',link:'/myblog/nodeperformance'},
       ],
     },
     {
       title: '服务器知识',
       children: [
-        {title:'linux',link:'/myblog/server/linux'},
-        {title:'http',link:'/myblog/server/http'},
-        {title:'node',link:'/myblog/server/node'},
+        {title:'linux',link:'/myblog/linux'},
+        {title:'http',link:'/myblog/http'},
+        {title:'node',link:'/myblog/node'},
       ],
     },
     {
       title: '其他',
       children: [
-        {title:'test',link:'/myblog/other/test'},
-        {title:'webgl',link:'/myblog/other/webgl'},
-        {title:'threejs',link:'/myblog/other/threejs'},
+        {title:'测试相关',link:'/myblog/test'},
+        {title:'WebGL',link:'/myblog/webgl'},
+        {title:'Threejs',link:'/myblog/threejs'},
       ],
     },
   ],

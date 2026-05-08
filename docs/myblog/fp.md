@@ -80,7 +80,7 @@ Cumulative Layout Shift，记录了⻚面上非预期的位移波动。使用按
 下面的一张图显示了一个网站从输入网址到显示内容的过程
 
 <!-- ![渲染过程](/optimization/fp1.png) -->
-<img src='../../assets/optimization/fp1.png'/>
+<img src='../assets/optimization/fp1.png'/>
 
 在这个过程中主要是经历了 FP->FCP->FMP->TTI 的过程
 
@@ -98,7 +98,7 @@ Cumulative Layout Shift，记录了⻚面上非预期的位移波动。使用按
 ### 举个例子 ②
 
 <!-- ![例子](/optimization/fp.png) -->
-<img src='../../assets/optimization/fp.png'/>
+<img src='../assets/optimization/fp.png'/>
 
 如图所示，手机上的向下文本移动了 25% 的屏幕高度距离(位移距离)，位移前后影响
 了 75% 的屏幕高度面积(位移影响的面积)，那么 CLS 为 0.25 \* 0.75 =0.1875

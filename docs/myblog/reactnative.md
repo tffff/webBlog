@@ -98,12 +98,12 @@ export default class App extends Component {
 ### ios 的启动页尺寸
 
 <!-- ![ios尺寸](/devneeds/ios.png) -->
-<img src='../../assets/devneeds/ios.png'/>
+<img src='../assets/devneeds/ios.png'/>
 
 ### ios 应用图标尺寸
 
 <!-- ![ios尺寸](/devneeds/iosicon.png) -->
-<img src='../../assets/devneeds/iosicon.png'/>
+<img src='../assets/devneeds/iosicon.png'/>
 
 ### android 的启动页尺寸
 

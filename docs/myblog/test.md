@@ -13,7 +13,7 @@ BDD 关注整体行为是否符合整体预期，编写的每一行代码都有�
 单元测试运行流程
 
 <!-- ![测试](/testcode/test.png) -->
-<img src='../../assets/testcode/test.png'>
+<img src='../assets/testcode/test.png'>
 
 建一个 index.spec.js //spec 表示是一个测试文件，单元测试最外层都要包一层 describe,
 首先是新建项目，然后 npm init -y 创建 package.json
@@ -96,12 +96,12 @@ module.exports = function(config) {
 然后执行`npm start` ，就会打开浏览器（因为我选择的是 chrome 浏览器)，如果成功了会出现如下结果
 
 <!-- ![成功结果](/testcode/result.png) -->
-<img src='../../assets/testcode/result.png'>
+<img src='../assets/testcode/result.png'>
 
 下面是没通过测试用例返回
 
 <!-- ![失败结果](/testcode/result_fail.png) -->
-<img src='../../assets/testcode/result_fail.png'>
+<img src='../assets/testcode/result_fail.png'>
 
 但是这样测试出来的结果可以自己看到，但是如果别人需要看呢，那怎么办，那就需要单元覆盖率了，
 就需要用到 `karma-coverage`

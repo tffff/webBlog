@@ -41,7 +41,7 @@ date: 2022-01-03 14:51:16
   输出就是展示出来
 
   <!-- ![渲染引擎](/optimization/渲染引擎.png) -->
-  <img src='../../assets/optimization/渲染引擎.png'>
+  <img src='../assets/optimization/渲染引擎.png'>
 
   虚框里面的步骤：
 

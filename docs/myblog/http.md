@@ -6,7 +6,7 @@ date: 2022-01-14 20:20:31
 ## http 请求模型
 
 <!-- ![http](/node/http1.png) -->
-<img src='../../assets/node/http1.png'>
+<img src='../assets/node/http1.png'>
 
 ## 在浏览器输入 url 之后发生了什么？
 
@@ -46,7 +46,7 @@ HTTP 协议是由从客户机到服务器的请求(Request)和从服务器到客
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;负责监视数据在主机和网络之间的交换。
 
 <!-- ![http2](/node/http2.png) -->
-<img src='../../assets/node/http2.png'>
+<img src='../assets/node/http2.png'>
 
 目前普遍应用版本还是 http1.1,http 默认端口是 90，https 默认端口是 443
 

@@ -1,6 +1,5 @@
 ---
-title: 性能优化①
-date: 2022-01-29 15:16:46
+title: 性能优化1
 ---
 
 ## 为什么要进行性能优化？
@@ -60,7 +59,7 @@ if-none-match: "D5FC8B85A045FF720547BC36FC872550"
 localStorage：缓存空间 5M，速度比较快，属于异步
 
 <!-- ![缓存优先级](/optimization/缓存1.png) -->
-<img src='../../assets/optimization/缓存1.png'/>
+<img src='../assets/optimization/缓存1.png'/>
 
 ```js
 //1. 常用的缓存库 jquery http强缓存
@@ -148,12 +147,12 @@ localStorage：缓存空间 5M，速度比较快，属于异步
 勾选前两项，如图所示：
 
 <!-- ![F12](/optimization/f12.png) -->
-<img src='../../assets/optimization/f12.png'/>
+<img src='../assets/optimization/f12.png'/>
 
 下面是上面的代码的执行结果：
 
 <!-- ![结果](/optimization/重排和重绘.png) -->
-<img src='../../assets/optimization/重排和重绘.png'/>
+<img src='../assets/optimization/重排和重绘.png'/>
 
 紫色的是重排，绿色的是重绘，这种写法就会影响网页的性能，因为一直在重排和重绘。
 
@@ -187,7 +186,7 @@ localStorage：缓存空间 5M，速度比较快，属于异步
 修改之后的结果，没有出现蓝色和绿色的框，说明没有进行重排和重绘，为什么呢？因为 transform 会新开一个层，它是在那个层里面进行的合并，不会影响性能
 
 <!-- ![没有重排重绘](/optimization/没有重排重绘.png) -->
-<img src='../../assets/optimization/没有重排重绘.png'/>
+<img src='../assets/optimization/没有重排重绘.png'/>
 
 ### 网页的整个渲染流程
 
@@ -250,7 +249,7 @@ requestAnimationFrame(function() {
 ### 渲染流程总结
 
 <!-- ![渲染流程总结](/optimization/渲染流程总结.png) -->
-<img src='../../assets/optimization/渲染流程总结.png'/>
+<img src='../assets/optimization/渲染流程总结.png'/>
 
 ## 几种渲染方式的比较
 
