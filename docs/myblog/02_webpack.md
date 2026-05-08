@@ -283,7 +283,7 @@ const webpackConfig = smp.wrap({
 显示的结果如下：
 
 <!-- ![webpack分析结果](/webpack/webpack分析.png) -->
-<img src='../../assets/webpack/webpack分析.png'/>
+<img src='../assets/webpack/webpack分析.png'/>
 
 3. 也可以使用`cache-loader`,但是要注意：这个使用多了会造成电脑卡顿，可以使用`hard-source-webpack-plugin`进行全局缓存
 
@@ -372,7 +372,7 @@ plugins: [
 效果如下：
 
 <!-- ![进度条效果](/webpack/progress.png) -->
-<img src='../../assets/webpack/progress.png'/>
+<img src='../assets/webpack/progress.png'/>
 
 ### 首页性能优化
 
@@ -380,7 +380,7 @@ plugins: [
 
 首先使用`Lighthouse`对首页进行检测，需要在`chrome`浏览器里面安装`Lighthouse`安装插件，检测网站必须是`https`域名，最后出来结果如下图：
 
-<img src='../../assets/webpack/性能.png'/>
+<img src='../assets/webpack/性能.png'/>
 
 发现性能太低了，`FCP`和`LCP`都是花费时间很长的，接下来就需要对上面慢的地方进行优化。
 

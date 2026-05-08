@@ -50,7 +50,7 @@ div {
 效果：
 
 <!-- ![气泡](/css/气泡.png) -->
-<img src='../../assets/css/气泡.png' width="100"/>
+<img src='../assets/css/气泡.png' width="100"/>
 
 ## 椭圆
 
@@ -161,4 +161,4 @@ div {
 效果如图：
 
 <!-- ![圆角梯形](/css/圆角梯形.png) -->
-<img src='../../assets/css/圆角梯形.png'/>
+<img src='../assets/css/圆角梯形.png'/>

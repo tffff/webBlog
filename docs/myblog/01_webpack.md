@@ -99,7 +99,7 @@ module.exports = {
 
 现在我们需要添加样式，假设我们把 css 文件打包可以
 
-<img src="../../assets/webpack/webpack测试.png"/>
+<img src="../assets/webpack/webpack测试.png"/>
 
 可以看到 webpack 并不能打包 css 文件，那我们该怎么办呢？这就需要用到 Loader 了。
 
@@ -410,7 +410,7 @@ module.exports = MyCommentsPlugin;
 
 在`webpack.config.js`里面引入该插件,执行命令之后可以看到在控制台里面打印出了文件名，结果如下
 
-<img src='../../assets/webpack/webpack插件.png'/>
+<img src='../assets/webpack/webpack插件.png'/>
 
 ## dev Server
 
@@ -682,7 +682,7 @@ const Constant = {
 
 通过交互式的、可缩放的树状图来可视化 webpack 输出文件的大小。
 
-<img src='../../assets/webpack/1.gif'/>
+<img src='../assets/webpack/1.gif'/>
 
 该插件将帮助你您执行以下操作：
 

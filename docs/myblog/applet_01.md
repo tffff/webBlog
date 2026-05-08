@@ -26,7 +26,7 @@ js 浏览器=》单线程 回阻塞
 
 小程序主要分为逻辑层(js)和渲染层（wxml、wxss）,这两者之间通过`JSBridge`来通信，还有就是他们的原生部分
 
-<img src="../../assets/wechat/小程序架构.png" />
+<img src="../assets/wechat/小程序架构.png" />
 
 他们之间通过 event 和 data 来通信。通信是有微信客户端（native）做的一层中转；
 
@@ -48,7 +48,7 @@ js 浏览器=》单线程 回阻塞
 
 比如你在发送一些请求的时候，这种一般是经由 native 转发；
 
-<img src="../../assets/wechat/架构.png" />
+<img src="../assets/wechat/架构.png" />
 
 ### 查看小程序运行
 
@@ -56,7 +56,7 @@ js 浏览器=》单线程 回阻塞
 
   微信开发者工具===》左上角的调试===》调试微信开发者工具
 
-  <img src="../../assets/wechat/渲染层wechat.png"/>
+  <img src="../assets/wechat/渲染层wechat.png"/>
 
   可以看到上述小程序运行界面嵌套的其实是一个`webview`,在本地调试环境中，wenbiew 里面嵌套的是 iframe,但是在真机练运行的时候，里面嵌套的是 webview
 
@@ -81,7 +81,7 @@ js 浏览器=》单线程 回阻塞
 
 - 基础库
 
-  <img src="../../assets/wechat/wechathelp.png"/>
+  <img src="../assets/wechat/wechathelp.png"/>
 
   可以直接在调试框里面执行上述方法
 
@@ -92,7 +92,7 @@ js 浏览器=》单线程 回阻塞
 
   里面有`wcc`和`wcsc`文件
 
-  <img src="../../assets/wechat/wechat1.png"/>
+  <img src="../assets/wechat/wechat1.png"/>
 
   - wcc: wxml compiler=>wxml 编辑器=》js
     1. 初始化，执行 js，生成构建虚拟 dom 的函数
@@ -186,7 +186,7 @@ if (generateFunc) {
 
 **流程**
 
-<img src="../../assets/wechat/流程图.png"/>
+<img src="../assets/wechat/流程图.png"/>
 
 #### 逻辑层
 

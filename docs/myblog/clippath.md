@@ -35,7 +35,7 @@ date: 2022-01-17 15:47:10
 
   效果:
 
-  <img src='../../assets/css/clip1.png'>
+  <img src='../assets/css/clip1.png'>
 
 - `circle`：将元素剪裁成一个圆
 
@@ -61,7 +61,7 @@ date: 2022-01-17 15:47:10
 
   效果：
 
-  <img src='../../assets/css/clip2.png'>
+  <img src='../assets/css/clip2.png'>
 
 - `ellipse`：将元素剪裁成一个椭圆
 
@@ -87,7 +87,7 @@ date: 2022-01-17 15:47:10
 
   效果：
 
-  <img src='../../assets/css/clip3.png'>
+  <img src='../assets/css/clip3.png'>
 
 - `polygon`：将元素剪裁成一个多边形，这里其实就是描点，多点连线，最少三个点，以距离左上角的长度为单位，跟 canvas 画布很像，下面以三角形为例
 
@@ -113,4 +113,4 @@ date: 2022-01-17 15:47:10
 
   效果：
 
-  <img src='../../assets/css/clip3.png'>
+  <img src='../assets/css/clip3.png'>

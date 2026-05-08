@@ -11,7 +11,7 @@ date: 2022-01-19 16:47:10
 CSS Houdini 是由一群來自 Mozilla, Apple, Opera, Microsoft, HP, Intel, IBM, Adobe 与 Google 的工程 师所组成的工作小组，志在建立一系列的 API，让开发者能够介入浏览器的 CSS engine
 
 <!-- ![houdini](/css/houdini.png) -->
-<img src='../../assets/css/houdini.png'/>
+<img src='../assets/css/houdini.png'/>
 
 ## Houdini API
 

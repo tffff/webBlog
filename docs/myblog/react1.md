@@ -18,7 +18,7 @@ date: 2022-01-12 16:14
 通常我们用`react`的`jsx`语法写完之后都是经过`babel`转义的成`createElement`对象处理之后渲染到`DOM`元素上的。
 
 <!-- ![jsx语法转义](/react/createelement.png) -->
-<img src='../../assets/react/createelement.png'/>
+<img src='../assets/react/createelement.png'/>
 
 下面是`react`源码里面的关于生产环境下的`createElement`的代码，我们来看看主要是怎么实现的？
 

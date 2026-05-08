@@ -6,7 +6,7 @@ date: 2022-01-10 10:21:38
 # 项目持续集成
 
 <!-- ![工程化和持续集成](/engineering/ci.png) -->
-<img src='../../assets/engineering/ci.png'>
+<img src='../assets/engineering/ci.png'>
 
 ## 什么是持续集成？(CI)
 
@@ -33,7 +33,7 @@ date: 2022-01-10 10:21:38
 svn 流程
 
 <!-- ![svn流程](/engineering/svn.png) -->
-<img src='../../assets/engineering/svn.png'>
+<img src='../assets/engineering/svn.png'>
 
 [svn 命令](/myblog/devneeds/svn)
 
@@ -49,7 +49,7 @@ svn 流程
 ## 自动化编译流程
 
 <!-- ![自动化编译流程](/engineering/自动化编译流程.png) -->
-<img src='../../assets/engineering/自动化编译流程.png'>
+<img src='../assets/engineering/自动化编译流程.png'>
 
 ```json
 -> 读入foo.es的文件内容，编译成js内容

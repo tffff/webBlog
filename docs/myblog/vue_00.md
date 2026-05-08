@@ -71,7 +71,10 @@ export default {
 
 ```
 
-<Alert>注意：使用 `v-for`时要带上`:key`属性 ,`v-for`也可以使用计算属性`computed`</Alert>
+:::tip
+注意：使用 `v-for`时要带上`:key`属性 ,`v-for`也可以使用计算属性`computed`
+
+:::
 
 `example`:
 

@@ -28,7 +28,7 @@ date: 2022-01-20 17:47:10
 - translate 位移
 
 <!-- ![transform](/css/transform.png) -->
-<img src='../../assets/css/transform.png'/>
+<img src='../assets/css/transform.png'/>
 
 transform: `matrix(a,b,c,d,e,f);`
 无论是旋转还是拉伸什么的，本质上都是应用的 matrix()方法实现的(修改 matrix()方法固定几个值)，只是类似于 transform:rotate 这种表现形式，我们更容易理解，记忆与上手。

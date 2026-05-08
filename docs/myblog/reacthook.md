@@ -186,7 +186,7 @@ export default App1;
 
 结果如下：
 
-<img src="../../assets/react/react-useref.png">
+<img src="../assets/react/react-useref.png">
 
 总结：
 

@@ -3,6 +3,8 @@ title: 手写Cli
 date: 2022-01-10 20:20:31
 ---
 
+# 手写CLI
+
 市面上有很多脚手架工具，一句命令行就能生成一个初始项目，比如 vue-cli,react-cli，但是这写脚手架是什么创建出来的呢？
 下面我们来探索
 
@@ -18,7 +20,7 @@ date: 2022-01-10 20:20:31
 结构如下：
 
 <!-- ![cli](/engineering/cli.png) -->
-<img src='../../assets/engineering/cli.png'>
+<img src='../assets/engineering/cli.png'>
 
 执行`npm link`,再执行`ydcli`就可以在打印出里面的代码
 

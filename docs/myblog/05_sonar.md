@@ -110,9 +110,9 @@ CREATE DATABASE sonar DEFAULT CHARACTER SET utf8;
 
 [Sonar 包](https://www.sonarqube.org/)官网下载
 
-<Alert>
+::warning
 有些点需要注意：例如SonarQube 7.9之后数据库就不再支持MySQL了。所以按照本文安装要先看下你要安装SonarQube对应版本的要求。这个也是我一开始，安装最新版本SonarQube，数据库配置了MySQL，所以服务一直没有起来的原因,Sonar 7.9及更高版本需要JAVA 11
-</Alert>
+:::
 
 ```bash
 # 安装解压软件
@@ -151,11 +151,11 @@ ss -ntpl | grep 9000
 出现如下提示就是创建成功
 
 <!-- ![sonar创建完成](/engineering/sonar创建成功.png) -->
-<img src='../../assets/engineering/sonar创建成功.png'>
+<img src='../assets/engineering/sonar创建成功.png'>
 
 可以在浏览器用“ 服务器 `ip:9000` 来访问
 
-<img src='../../assets/engineering/sonar界面.png'>
+<img src='../assets/engineering/sonar界面.png'>
 
 登录账号密码都是 admin
 
@@ -164,13 +164,13 @@ ss -ntpl | grep 9000
 通过下面红框的点击事件来执行
 
 <!-- ![sonar界面](/engineering/汉化.png) -->
-<img src='../../assets/engineering/汉化.png'>
+<img src='../assets/engineering/汉化.png'>
 
 ## 4、安装问题
 
 ### 1、没有权限的时候报错
 
-<img src='../../assets/engineering/sonar无执行权限.png'>
+<img src='../assets/engineering/sonar无执行权限.png'>
 
 给整个文件夹权限就可以了
 
@@ -180,13 +180,13 @@ chmod 777 -R  sonarqube-9.4/
 
 ### 2、 找不到或无法加载主类
 
-<img src='../../assets/engineering/sonar报错1.png'>
+<img src='../assets/engineering/sonar报错1.png'>
 
 这个就是 `java` 版本不对。需要仔细查看 `sonar` 文档对应的 `java` 版本和`数据库`的版本
 
 ### 3、 找不到或无法加载主类
 
-<img src='../../assets/engineering/sonar报错2.png'>
+<img src='../assets/engineering/sonar报错2.png'>
 
 这个就是删除对应的路径下面的文件夹就行，把 `temp` 删除掉
 
@@ -194,11 +194,11 @@ chmod 777 -R  sonarqube-9.4/
 
 ## 5、sonar 创建项目
 
-<img src='../../assets/engineering/创建项目.png'>
-<img src='../../assets/engineering/create_project.png'>
-<img src='../../assets/engineering/create_project1.png'>
-<img src='../../assets/engineering/cretae_project2.png'>
-<img src='../../assets/engineering/create_project3.png'>
+<img src='../assets/engineering/创建项目.png'>
+<img src='../assets/engineering/create_project.png'>
+<img src='../assets/engineering/create_project1.png'>
+<img src='../assets/engineering/cretae_project2.png'>
+<img src='../assets/engineering/create_project3.png'>
 
 ### 配置本地 sonar-scanner 环境
 
@@ -233,7 +233,7 @@ sonar-scanner \
 修改需要扫描的文件夹
 
 <!-- ![创建3](/engineering/配置文件.png) -->
-<img src='../../assets/engineering/配置文件.png'>
+<img src='../assets/engineering/配置文件.png'>
 
 使用终端 `shell(zsh/bash)` 执行你的这个 `sonar-project.properties`文件
 

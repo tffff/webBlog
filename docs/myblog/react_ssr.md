@@ -41,7 +41,7 @@ date: 2022-01-31 16:20:10
 **客户端渲染流程**
 
 <!-- ![客户端渲染](/react/客户端渲染.jpg) -->
-<img src='../../assets/react/客户端渲染.jpg'/>
+<img src='../assets/react/客户端渲染.jpg'/>
 
 ### 客户端渲染的优缺点
 
@@ -63,7 +63,7 @@ server side render：就是服务端渲染，不同于 jsp,php 等传统服务�
 **服务端渲染流程**
 
 <!-- ![服务端渲染](/react/服务端渲染.png) -->
-<img src='../../assets/react/服务端渲染.png'/>
+<img src='../assets/react/服务端渲染.png'/>
 
 ### 服务端渲染的优缺点
 
@@ -82,7 +82,7 @@ React SSR 正好解决客户端 SEO 不友好和 js 太大加载很慢导致的�
 ### React SSR 流程图
 
 <!-- ![ssr](/react/ssr1.png)  -->
-<img src='../../assets/react/ssr1.png'/>
+<img src='../assets/react/ssr1.png'/>
 上图就是ssr的流程，服务端只是生成了html代码，实际上是前端生成一个main.js，提供给服务端的html使用
 
 ### React SSR 优缺点
@@ -101,7 +101,7 @@ React SSR 正好解决客户端 SEO 不友好和 js 太大加载很慢导致的�
 首先是创建一个 react-ssr 的文件夹，里面的目录如下：
 
 <!-- ![react-ss目录](/react/react-ssr目录.png) -->
-<img src='../../assets/react/ssr1.png'/>
+<img src='../assets/react/ssr1.png'/>
 
 ### 首先是服务端
 
@@ -216,7 +216,7 @@ module.exports = {
 ```
 
 效果如图所示：
-<img src='../../assets/react/ssr-result.png'/>
+<img src='../assets/react/ssr-result.png'/>
 
 <!-- ![ssr第一步结果](/react/ssr-result.png) -->
 

@@ -8,11 +8,11 @@
 
 先从[java 官网](https://www.oracle.com/java/technologies/downloads/#java11)下载 jdk 文件，因为这个文件不能用 `wget` 直接在服务器端下载，所以我选择从本机电脑上下载之后上传到服务器安装
 
-<Alert type='info'>
+:::tip
   Linux 系统选择 rmp 后缀的文件夹下载
-</Alert>
+:::
 
-<img src='../../assets/engineering/jdk11.png'>
+<img src='../assets/engineering/jdk11.png'>
 
 使用 sftp 上传到服务器（还有其他两种方式 ftp,scp）,参考<router-link to='/myblog/node/loginserver'>远程传输文件到服务器</router-link>
 

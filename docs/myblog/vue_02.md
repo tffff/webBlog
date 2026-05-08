@@ -323,7 +323,7 @@ watchEffect(() => {
 
 ## 6、生命周期
 
-<img src="../../assets/images/smzq.png"/>
+<img src="../assets/images/smzq.png"/>
 
 ## 7、父子组件传参和回调以及调用子组件的方法和属性
 
@@ -718,7 +718,7 @@ app.directive('focus', {
 </style>
 ```
 
-## 在使用 vue3 的时候接触的 ts 的知识点
+## 16、在使用 vue3 的时候接触的 ts 的知识点
 
 ### type 和 interface 的区别
 

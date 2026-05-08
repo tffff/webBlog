@@ -10,7 +10,7 @@ date: 2022-01-12 16:14
 第一次执行函数体的时候，调用`useState`会执行`mountState`，它主要做了以下几件事情：
 
 <!-- ![useState](/react/hooks1.png) -->
-<img src="../../assets/react/hooks1.png"/>
+<img src="../assets/react/hooks1.png"/>
 
 1. 默认值是`function`，执行`function`，得到初始`state`
 2. `state`是存放在`memoizedState`属性中
@@ -28,7 +28,7 @@ const [name, setName] = useState(() => 'yyyy');
 ### dispatchAction
 
 <!-- ![useState](/react/hooks2.png) -->
-<img src="../../assets/react/hooks2.png"/>
+<img src="../assets/react/hooks2.png"/>
 
 1. 创建一个`update`
 2. `update`添加到`quene`里
@@ -43,7 +43,7 @@ const [name, setName] = useState(() => 'yyyy');
 ### updateState
 
 <!-- ![useState](/react/hooks3.png) -->
-<img src="../../assets/react/hooks3.png"/>
+<img src="../assets/react/hooks3.png"/>
 
 1. 递归执行`quene`里的`update`
 2. 计算最新的`state`，赋值给`memoizedState`
@@ -53,7 +53,7 @@ const [name, setName] = useState(() => 'yyyy');
 ### MountEffect
 
 <!-- ![useState](/react/hooks4.png) -->
-<img src="../../assets/react/hooks4.png"/>
+<img src="../assets/react/hooks4.png"/>
 1. 处理依赖数组
 2. 设置`effectTag`
 3. 新增一个`Effect`到`currentlyRenderingFiber.updateQueue` 中参与`到compleleRoot`中
@@ -64,7 +64,7 @@ const [name, setName] = useState(() => 'yyyy');
 里执行 MountEffect
 
 <!-- ![useState](/react/hooks5.png) -->
-<img src="../../assets/react/hooks5.png"/>
+<img src="../assets/react/hooks5.png"/>
 
 ### UpdateEffect
 
@@ -74,11 +74,11 @@ const [name, setName] = useState(() => 'yyyy');
 ### UpdateEffect
 
 <!-- ![useState](/react/hooks6.png) -->
-<img src="../../assets/react/hooks6.png"/>
+<img src="../assets/react/hooks6.png"/>
 
 ### destroy
 
 在`commitUnmount`阶段卸载组件，这时`distory`方法会被调用
 
 <!-- ![useState](/react/hooks7.png) -->
-<img src="../../assets/react/hooks7.png"/>
+<img src="../assets/react/hooks7.png"/>

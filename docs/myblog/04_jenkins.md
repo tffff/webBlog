@@ -12,7 +12,9 @@ date: 2022-01-10 10:21:38
 
 `Jenkins` 在 CI 中大量使用，以允许代码自动构建，部署和测试为目的，减少开发时间的浪费。让我们考虑以下情况：先构建应用程序的完整源代码，然后将其部署在测试服务器上进行测试。这是开发软件的理想方法，但是在实践中，这是不实际的。开发人员将不得不暂停工作，直到获得测试结果为止，这可能需要几个小时。整个过程是手动的，因此可能会出现人为错误，这可能会浪费时间，所以我们可以使用 jenkins 来达到自动化的目的，多个开发人员提交代码之后，只需要在 jenkins 上面构建一下就能实现部署，减少了时间的浪费
 
-<Alert type="warning"> **下载的时候下载长期支持版本**(不要使用 war 的方法安装 jenkins),jenkins 安装之后自动集成服务，所以如果是 Mac 上安装的话需要取消开机自启，毕竟还是挺消耗内存的。</Alert>
+:::warning
+ **下载的时候下载长期支持版本**(不要使用 war 的方法安装 jenkins),jenkins 安装之后自动集成服务，所以如果是 Mac 上安装的话需要取消开机自启，毕竟还是挺消耗内存的。
+ :::
 
 ### 安装 jenkins 的前置条件
 
@@ -84,9 +86,9 @@ Starting jenkins (via systemctl):                          [  OK  ]
 
 ### 1.下面的报错信息
 
-<img src='../../assets/engineering/jenkins错误.png'>
+<img src='../assets/engineering/jenkins错误.png'>
 
-<img src='../../assets/engineering/jenkins错误1.png'>
+<img src='../assets/engineering/jenkins错误1.png'>
 
 出现上图的问题就是防火墙没有打开，执行下面的命令
 
@@ -100,7 +102,7 @@ systemctl disable firewalld
 
 ### 2.在浏览器上输入`服务器IP:8088`，打开看到了报错
 
-<img src='../../assets/engineering/jenkins报错.png'>
+<img src='../assets/engineering/jenkins报错.png'>
 
 **解决方法：**
 
@@ -112,7 +114,7 @@ yum install fontconfig
 刷新网页，等待登录页面出来,然后根据提示拿到密码
 
 <!-- ![jenkins登录](/engineering/jenkins登录.png) -->
-<img src='../../assets/engineering/jenkins登录.png'>
+<img src='../assets/engineering/jenkins登录.png'>
 
 执行`cat /var/lib/jenkins/secrets/initialAdminPassword`
 
@@ -123,12 +125,12 @@ yum install fontconfig
 耐心等待插件安装
 
 <!-- ![jenkins登录](/engineering/jenkins插件.png) -->
-<img src='../../assets/engineering/jenkins插件.png'>
+<img src='../assets/engineering/jenkins插件.png'>
 
 创建登录用户，需要记住自己设置的账户和密码，下一步设置实例，默认不改动，之后可以修改的
 
 <!-- ![jenkins实例](/engineering/jenkins实例配置.png) -->
-<img src='../../assets/engineering/jenkins实例配置.png'>
+<img src='../assets/engineering/jenkins实例配置.png'>
 
 这样就设置完成了，可以开始使用了。
 
@@ -137,7 +139,7 @@ yum install fontconfig
 管理 kenkins > 系统配置 > 管理插件 #高级->升级站点 替换掉源[代码](/myblog/engineering/jenkins.html#插件过慢的解决方法)
 
 <!-- ![jenkins下载源](/engineering/jenkins插件管理.png) -->
-<img src='../../assets/engineering/jenkins插件管理.png'>
+<img src='../assets/engineering/jenkins插件管理.png'>
 默认连接 [https://updates.jenkins.io/update-center.json](https://updates.jenkins.io/update-center.json)
 
 改成
@@ -162,29 +164,29 @@ Jenkins 在任务处理的时候是一个事物，如果停止了可能会出现
 
 ## jenkins 创建自由项目
 
-<img src='../../assets/engineering/jenkins配置1.png'>
-<img src='../../assets/engineering/jenkins配置2.png'>
-<img src='../../assets/engineering/jenkins配置Maven.png'>
-<img src='../../assets/engineering/jenkins配置node.png'>
+<img src='../assets/engineering/jenkins配置1.png'>
+<img src='../assets/engineering/jenkins配置2.png'>
+<img src='../assets/engineering/jenkins配置Maven.png'>
+<img src='../assets/engineering/jenkins配置node.png'>
 
 ### 1.jenkins 拉取 github 的项目
 
 先创建项目
-<img src='../../assets/engineering/jenkins创建项目.png'>
-<img src='../../assets/engineering/jenkins配置git.png'>
-<img src='../../assets/engineering/jenkins创建项目1.png'>
-<img src='../../assets/engineering/jenkins创建项目2.png'>
+<img src='../assets/engineering/jenkins创建项目.png'>
+<img src='../assets/engineering/jenkins配置git.png'>
+<img src='../assets/engineering/jenkins创建项目1.png'>
+<img src='../assets/engineering/jenkins创建项目2.png'>
 这个地方主要是填写 github 的用户名和密码来授权
-<img src='../../assets/engineering/jenkins创建项目5.png'>
-<img src='../../assets/engineering/jenkins创建项目3.png'>
-<img src='../../assets/engineering/jenkins创建项目4.png'>
+<img src='../assets/engineering/jenkins创建项目5.png'>
+<img src='../assets/engineering/jenkins创建项目3.png'>
+<img src='../assets/engineering/jenkins创建项目4.png'>
 下面就是构建完成之后的结果
-<img src='../../assets/engineering/jenkins创建项目6.png'>
+<img src='../assets/engineering/jenkins创建项目6.png'>
 
 `jenkins` 构建之后的地址是在`/var/lib/jenkins/workspace/`里面
 
 项目打包，执行命令
-<img src='../../assets/engineering/jenkins创建项目7.png'>
+<img src='../assets/engineering/jenkins创建项目7.png'>
 
 ## jenkins 创建流水线项目
 
@@ -198,8 +200,8 @@ Jenkins 在任务处理的时候是一个事物，如果停止了可能会出现
 
 `pipeline` 流水线操作不用过多关于自由风格项目的图形设置与步骤，只需将相关的操作，生成对应的 DSL 语言，并按自己的需求进行一步一步执行即可，同时该代码的移植性更强；并且在流水线语法中，可自动生成我们需要的代码，便于维护
 
-<img src='../../assets/engineering/jenkins流水线项目.png'>
-<img src='../../assets/engineering/jenkins流水线项目1.png'>
+<img src='../assets/engineering/jenkins流水线项目.png'>
+<img src='../assets/engineering/jenkins流水线项目1.png'>
 
 `Jenkinsfile`的代码示例
 

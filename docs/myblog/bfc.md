@@ -77,7 +77,7 @@ date: 2022-01-18 15:52:10
 效果如图所示：
 
 <!-- ![margin重叠效果](/assets/css/margin重叠.png) -->
-<img src="../../assets/css/margin重叠.png"/>
+<img src="../assets/css/margin重叠.png"/>
 
 上述代码两个 child 盒子之间的距离是多少呢？答案是 200 吗？错误！有人说为什么不是 200 呢，你看第一个盒子下边距是 100，第二个盒子的上边距是 100，那加起来应该是 200 啊，别的不会算数加法这还能出错？其实不是这样的，因为两个垂直的盒子之间的 margin 间距上下重叠了，所以取最大值就是 100，既两个盒子的距离是 100，那怎么解决这个问题呢？，那就要用到 BFC 了
 
@@ -101,7 +101,7 @@ date: 2022-01-18 15:52:10
 效果如图所示：
 
 <!-- ![margin重叠效果](/css/BFC解决margin重叠.png) -->
-<img src="../../assets/css/BFC解决margin重叠.png" />
+<img src="../assets/css/BFC解决margin重叠.png" />
 
 ### 2. 清除内部浮动？
 
