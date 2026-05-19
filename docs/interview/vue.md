@@ -11,18 +11,23 @@ group:
 
 ## 1、v-for和v-if为什么不能一起使用？
 
-`v-for `优先级高于 `v-if`，会先执行循环，再判断条件，造成性能浪费和逻辑歧义
+`v-for `优先级高于 `v-if`，会先执行循环，再判断条件，弊端就是会造成性能浪费，哪怕条件不满足依然会先循环所以数据
+
+👉 实际最佳做法：
+- 优先把v-if写在外层容器标签上，先判断条件再循环
+- 数据层面提前过滤数组，只循环符合条件的数据
+
 > 在 Vue3 中虽然可以一起用，但官方仍然不推荐，因为会影响 diff 性能和代码可读性，最佳实践是通过 computed 进行数据层过滤。
 
 ## 2、vue 组件的通信方式
-- 父子组件：props和emit，也可以选择ref
-- 兄弟组件：eventBus,也可以选择$parent
-- 祖先与后代：provide和inject
-- 全局：vuex pinia
+- 父子组件：`props`和`emit`，也可以选择`$ref`
+- 兄弟组件：`eventBus`,也可以选择`$parent`
+- 祖先与后代：`provide`和`inject`
+- 全局：`vuex`、`pinia`
 
 ## 3、vuex和pinia的区别? 为什么官方更推荐pinia？
-- 无 mutations
-- 支持 TS
+- 无 `mutations`
+- 支持 `TS`
 - 更轻量
 - Composition API 风格
 
@@ -58,7 +63,7 @@ group:
     - 与生命周期强相关
 
 👉 升级问法？
- `composable`与普通攻击函数有什么区别？
+ `composable`与普通工具函数有什么区别？
 - `composable`是带vue响应式能力的可复用逻辑
 - 普通工具函数只是纯计算，不带响应式能力
 
@@ -87,59 +92,142 @@ state1.count++ 会触发视图更新吗？//会 因为count是shallowReactive的
 - mounted生命周期钩子
     - mounted 生命周期钩子在组件的模板已经渲染到DOM中之后触发，在这个阶段，可以访问DOM元素，通常用于执行需要访问DOM的任务，例如操作DOM元素、添加事件监听器或者执行与DOM相关的操作
     - 通常用于执行需要等待DOM渲染完成之后才能执行的任务，以确保可以操作已经存在的DOM元素
-## 9、Vue的父组件和子组件的生命周期钩子函数执行顺序？
+## 9、Vue2/vue3的父子组件的生命周期执行顺序？
+vue2生命周期：
 - 加载渲染过程:父beforeCreate->父created->父beforeMount->子beforeCreate->子created->子beforeMount->子mounted->父mounted
 - 子组件更新过程：父breforeUpdate->子beforeUpdate->子updated->父updated
 - 父组件更新过程：父beforeUpdate->父update
 - 销毁过程：父beforeDestroy->子beforeDestroy->子destroyed->父destroyed
 
+vue3生命周期
+- 父 setup->父 beforeCreate->父 created->父 beforeMount->子 setup->子 beforeCreate->子 created->子 beforeMount->子 mounted->父 mounted
 ## 10、watch和computed的区别？
-computed:
-- 计算属性：创建计算属性的方式，依赖于Vue的响应式系统进行数据追踪，当依赖的数据发生变化时，计算属性会自动重新计算，而且只在必要时才重新计算
-- 缓存：计算属性具有缓存机制，只有在依赖的数据发生变化时才会重新计算，意味着多次访问同一个计算属性会返回相同的结果，不会重复计算
-- 无副作用：不会修改数据本身
-- 用于模板中：计算属性通常用于模板中，以便于在模板中展示派生数据
-- 必须同步：只对同步代码中的依赖响应
+- 缓存特性：`computed`有缓存，依赖值不变就不重新计算，`watch`无缓存，数据一遍立刻执行
+- 执行方式：`computed`只能同步执行 不能写异步，`watch`支持异步执行
+- 使用场景：需要依赖数据算出新值，页面直接渲染用`computed`,数据变化后做业务逻辑、请求接口用`watch`
 
-watch:
-- 监听数据：监听数据的变化，可以监听一个或者多个数据项
-- 副作用操作：watch回调函数可以执行副作用造成，例如发生网络请求、手动操作DOM、或执行其他需要的逻辑
-- 不缓存：依赖变化立即执行回调函数
-- 用于监听数据的变化：一般不在模板中直接展示
-- 支持异步：监测数据变化后，可进行同步或异步操作
 
 ## 11、vue3中ref和reactive的区别？
-- ref：创建响应式数据，只能用于单个值，不能用于对象或数组
-- reactive：创建响应式对象，可以用于对象或数组
+- `ref`：创建响应式数据，只能用于单个值，不能用于对象或数组,`ref` 也可以包裹对象(`ref`内部会用 `reactive`处理对象)
+- `reactive`：创建响应式对象，可以用于对象或数组
 ## 12、vue3生命周期？
 1、创建阶段：
-    - beforeCreate
-    - created
+- `beforeCreate`
+- `created`
+
 2、设置阶段：
-    - setup
+ - `setup`
+ 
 3、挂载阶段
-    - beforeMount
-    - onBeforeMount
-    - mounted
-    - onMounted
+- `beforeMount`
+- `onBeforeMount`
+- `mounted`
+- `onMounted`
+
 4、更新阶段
-    - beforeUpdate
-    - onBeforeUpdate
-    - updated
-    - onUpdated
+- `beforeUpdate`
+- `onBeforeUpdate`
+- `updated`
+- `onUpdated`
+
 5、卸载阶段
-    - beforeUnmount
-    - onBeforeUnmount
-    - unmounted
-    - onUnmounted
+- `beforeUnmount`
+- `onBeforeUnmount`
+- `unmounted`
+- `onUnmounted`
 
 ## 13、v-if和v-show的区别？
 1、从DOM层面看：`v-if`是销毁/重建，`v-show`是隐藏/显示
+
 2、从性能层面看：`v-if`的切换成本较高，`v-show`的切换成本较低
+
 3、从内存层面看：`v-if`会占用更多的内存，`v-show`不会占用内存
 
-## 14、nextTick原理？
-- vue更新DOM是异步的
-- nextTick在DOM更新完成后执行
-- 内部使用Promise、MutationObserver、setImmediate等方法实现
-- 当DOM更新完成后，会触发`nextTick`回调函数
+## 14、nextTick的作用和使用场景？
+`vue`是异步更新DOM,修改数据之后不会立刻更新DOM,`$nextTick`就是等DOM页面彻底渲染更新完成之后再执行回调函数
+
+**使用场景**
+修改数据之后，立刻想要操作DOM、获取DOM元素宽高、获取表单焦点都必须放在`nextTick`里面执行
+
+## 15、vue3对数组主要的修改有哪些？
+1、使用 `Proxy` 替代 `Object.defineProperty`
+
+2️、不再需要重写数组方法
+
+3️、支持直接通过索引、`length` 修改数组并触发更新
+
+4️、所有数组操作天然响应式，无需 `$set`
+
+## 16、使用v-for的时候不使用key可以吗？可以使用index做为key？
+- key的作用：key是元素唯一标识，帮助虚拟DOM做diff对比，精准识别新旧节点，避免DOM复用错乱，提升渲染效率
+- 为啥不推荐用index当key：数组增删、排序时，index序号会重新变动，导致diff算法错误复用DOM,引发数据渲染错乱、表单数据错位等问题
+仅静态纯展示。无增删改查的简单列表可以临时使用index,业务动态列表优先使用唯一id
+
+## 17、setup 里为什么没有 this？
+因为执行顺序是：`setup`() -> 组件实例还没完全创建 -> `beforeCreate`（实例刚准备就绪）
+
+## 18、封装组件是怎么封装的？
+- 封装组件时，我会先明确组件职责，
+
+- 通过 `props` 接收数据，`emits` 向外通知事件，
+
+- 内部状态自己管理，
+
+- 使用 `slot` 提高扩展性，
+
+- 保证组件高内聚、低耦合、可复用。
+
+👉 *给个封装`Echarts`的例子*
+
+- 我封装 `ECharts` 组件时，会把初始化、`resize`、销毁统一放在组件内部，resize使用`ResizeObserver / window.resize`
+
+- 通过 `props` 接收 `option`，
+
+- 在 `onMounted` 初始化实例，
+
+- 用 `watch` 监听 `option` 变化调用 `setOption`，
+
+- 在 `onUnmounted` 销毁实例，
+
+- 页面只负责传配置，不关心 `echarts` 细节。
+
+
+
+## 19、说说vue2和vue3的生命周期具体有哪些区别，平时开发常用哪些钩子？
+`vue3`相比`vue2`新增了`setup`入口函数，作为组合式api起点
+
+生命周期名称也做了调整，`Vue2`的`beforeDestory`改成了`Vue3`的`beforeUnmount`,`destory`改成了`onUnmounted`
+
+平常日常开发主要是使用`onMounted`,页面DOM渲染完成后用来请求接口、初始化数据、日常项目里面用的最多
+
+## 20、setUp里面为什么不能用this?
+因为setup执行的时机是最早，在组件实例还没有创建完成之前就运行了，此时this还不存在，所以setup内部无法使用this
+
+执行顺序是setup->beforeCreate->created
+
+## 21、Vue组件中的data为什么必须写成函数形式？
+因为组件会被多次复用，如果data写成对象，那么所有组件实例会共用同一个对象，数据会互相污染
+
+写成函数，每次创建组件都会创建返回一个全新的对象，每个组件拥有自己独立的数据作用域，互不干扰
+
+## 22、vue插槽有几种，分别怎么用？
+1、默认插槽：`<template></template>`
+
+2、具名插槽：`<template slot="header"></template>`
+
+3、作用域插槽：`<template #default="{ item }">{{ item }}</template>`
+
+**使用场景**
+
+1、默认插槽：用于在组件内部渲染默认内容
+
+2、具名插槽：用于在组件内部渲染具名内容
+
+3、作用域插槽：用于在组件内部渲染作用域内容
+
+## 23、vue如何实现路由懒加载？
+路由懒加载就是把路由组件拆分打包，用到时再加载，减少首屏加载体积，写法用es6的`import`语法实现
+```js
+const Home = () => import('@/views/Home.vue')
+```
+配置路由时引入即可，Vue3搭配Vite也同样适用，能够有效优化首屏加载速度。

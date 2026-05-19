@@ -4,7 +4,7 @@ import sidebar from './config/sidebar'
 
 export default defineConfig({
   themeConfig: {
-    name: 'webBlog',
+    name: '个人博客',
     nav,
     sidebar,
   },

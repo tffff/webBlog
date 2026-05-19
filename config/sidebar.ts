@@ -7,7 +7,7 @@ const sidebar = {
       ],
     },
     {
-      title: '开发基础',
+      title: '开发工具',
       children: [
         {title:'命令行操作合集',link:'/myblog/commandline'},
         {title:'前端插件',link:'/myblog/plugins'},
@@ -60,6 +60,7 @@ const sidebar = {
         {title:'vue2 知识点',link:'/myblog/vue_00'},
         {title:'vue2源码解析',link:'/myblog/vue_01'},
         {title:'vue3+ts+vite 组合式 api 知识点',link:'/myblog/vue_02'},
+        {title:'vue nuxt使用',link:'/myblog/vue_nuxt'},
         {title:'小程序源码解析',link:'/myblog/applet_01'},
         {title:'TS初探',link:'/myblog/ts_00'},
       ],

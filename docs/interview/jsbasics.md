@@ -488,6 +488,35 @@ JS 内置对象分为**数据封装类对象**和**其他对象**
 - 普通对象支持 `JSON` 序列化，但 `Map` 默认无法获取正确数据。
 - `Map` 对象在涉及频繁删除和添加键值对的场景中表现更好，而普通对象没有优化
 
+### 12、ES6新特性有哪些？
+- 变量声明：`let / const`
+- 箭头函数：`() => {}`  没有自己的 `this`，指向父级作用域的 `this`,不能当构造函数,没有 `arguments` 参数对象
+- 模板字符串：`${}`
+- 解构赋值：`{a, b} = {a: 1, b: 2}`
+- 剩余 / 展开运算符：`...rest`
+- 函数参数默认值：`function add(a, b = 0) { return a + b; }`
+- 对象简写：`{name, age}`
+- 异步解决方案： `Promise`  解决回调地狱问题
+- 模块化：`import / export`
+- 语法糖：`class`
+- `Set / Map​`
+- `Symbol​`
+- `for...of​`
+- `Proxy` / `Reflect（偏高级）`
+
+### 13、Set、Map 的区别？
+- `Set`
+  - 成员唯一、无序且不重复
+  - [value, value]，键值与键名是一致的（或者说只有键值，没有键名）
+  - 可以遍历，方法有：`set.add()`、`set.delete()`、`set.has()`、`set.clear()`、`set.size()`
+- `Map`
+  - 本质上是键值对的集合，类似集合
+  - 可以遍历，方法很多可以跟各种数据格式转换
+  - `map.set(key, value)`、`map.get(key)`、`map.has(key)`、`map.delete(key)`、`map.clear()`、`map.size`
+
+<img src='../assets/interview/setmap.png' width='600'/>
+
+
 ## 闭包
 
 ### 1、对闭包的看法？为什么要用闭包？说一下闭包的原理和应用场景
