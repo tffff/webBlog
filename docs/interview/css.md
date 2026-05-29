@@ -203,7 +203,7 @@ group:
    元素的 width=content 的 width。
 
 2. IE 盒模型(怪异盒模型)
-   元素的 width=content 的 width+padding+border。
+   元素的 width=content 的 width+padding+border。更利于布局控制
 
 3. 切换两种盒模型方法
 

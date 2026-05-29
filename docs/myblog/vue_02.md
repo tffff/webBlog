@@ -49,8 +49,7 @@ const handleAddAge = () => {
    - `reactive` 用来定义：对象（或者数组）类型数据
    - `ref` 也可以用来定义对象或者数组类型的数据，内部会通过 `reactive` 转为代理对象
 2. 从原理方面：
-   - `ref` 通过 `Object.defineProperty()`的 `get` 和 `set` 实现数据代理。
-   - `reactive` 使用 `Proxy` 实现数据代理，并且通过 `Reflect` 操作源对象内部的数据。
+   - `ref` 、`reactive` 使用 `Proxy` 实现数据代理，并且通过 `Reflect` 操作源对象内部的数据。
 3. 从使用方面：
    - `ref` 在`script`中操作数据需要`.value`,在`template` 模板中不需要。
    - `reactive` 都不需要`.value`
@@ -571,6 +570,49 @@ const newVal = computed({
 ```
 
 ## 12、Teleport 传送组件
+`Teleport` 是把组件的 `DOM` 渲染到指定外层容器（如 body），但逻辑/响应式/生命周期仍属于原组件。
+
+一、基本用法
+
+```vue
+<script setup>
+import { ref } from 'vue'
+const visible = ref(false)
+</script>
+
+<template>
+  <button @click="visible = true">打开弹窗</button>
+
+  <Teleport to="body">
+    <div v-if="visible" class="modal">
+      <p>我是全局弹窗</p>
+      <button @click="visible = false">关闭</button>
+    </div>
+  </Teleport>
+</template>
+```
+- to：CSS 选择器或 DOM 节点，目标容器必须已存在于 DOM 中
+- 可用 :disabled="isMobile"控制是否禁用传送
+
+二、解决什么问题？
+
+- `Vue2` 中 `Modal` / `Drawer` / `Tooltip` 常见问题：
+- 受父元素 overflow: hidden裁剪
+- 受父元素 `transform`影响导致 fixed定位失真
+- `z-index`层级难管理
+- `Teleport` 把 `DOM` 挂到 `body` 下，从物理上避开上述问题。
+
+三、底层原理（面试核心）
+
+- `Teleport` 不是改变组件树，而是 `VNode` 渲染重定向：
+- 编译器识别 `Teleport` 组件时，生成特殊 `VNode`（标记 __isTeleport: true）
+- 挂载时：`querySelector(to)`找到目标容器 → `mountChildren()`把子 `VNode` 渲染到目标容器
+- 更新时：`patch` 子节点到目标容器
+- 卸载时：从目标容器移除 `DOM`、清理 `effect`
+
+关键：组件实例、props、emit、响应式、生命周期 全部保留在原组件，只有真实 DOM 被移到别处
+
+
 
 ## 13、自定义 hooks
 
@@ -783,6 +825,3 @@ app.directive('focus', {
 - `type` 可以声明基本数据类型别名/联合类型/元组等，而 `interface` 不行
 - `interface` 能够合并声明，而 `type` 不行
 
-```
-
-```
