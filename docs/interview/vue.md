@@ -32,8 +32,8 @@ group:
 
 ## 4、vue2和vue3的区别
 - 响应式：`Vue2` 用 `Object.defineProperty`劫持对象已有属性，无法监听数据下标、length长度以及新增/删除属性的问题，`Vue3` 用 `Proxy`修改了vue2的数据问题
-    - 使用框架重写的7个变异方法：push/pop/shift/unshift/splice/sort/reverse，
-    - 直接修改下标长度：this.$set(数组、下标、新值)或Vue.set()
+    - 使用框架重写的7个变异方法：`push`/`pop`/`shift`/`unshift`/`splice`/`sort`/`reverse`，
+    - 直接修改下标长度：`this.$set`(数组、下标、新值)或`Vue.set()`
     - 整体替换数组
 - 性能：`Vue3` 更快（初始化、更新、内存），包括更小的打包大小、更快的虚拟DOM的重写、更高效的组件初始化等，vue2在性能方面相对较慢，尤其是处理大型应用和复杂组件时
 - 组合式 `API（Composition API）`
@@ -45,8 +45,10 @@ group:
     - `Fragment`：将多个子元素组合成一个虚拟 DOM 元素，避免额外的 DOM 操作
 
 👉 面试加分点：
-
->Vue3 重写了响应式系统，解决了 Vue2 无法监听新增/删除属性的问题。
+- `Vue3` 重写了响应式系统，解决了 `Vue2` 无法监听新增/删除属性的问题。
+- `Vue3` 使用`Vite`比`Vue2`快
+    - 原生`ESM`(`Native ESM`)：`vite`在开发环境下不需要打包，它利用浏览器原生的`ES Module`规范，直接按需请求源码，当浏览器发出请求时，`Vite`服务器只需要把文件内容转换一下就直接发给浏览器，而不是像`WebPack`那样先打包整个项目再启动服务
+    - `esbuild`:这个是用`GO`语言编写的打包工具，他的编译速度比传统的`javascript`编写的打包工具（如`Webpack`的底层依赖）快`10-100`倍，`Vite`利用它来做预构建(将第三方以来构建成ESM格式)和代码压缩
 
 ## 5、vue3响应式原理？
 👉 核心：
@@ -117,61 +119,29 @@ vue3生命周期
     - 基本类型无法被`Proxy`劫持，依靠`.value`字段实现监听
 - `reactive`：创建响应式对象，可以用于对象或数组
 
-## 12、vue3生命周期？
-1、创建阶段：
-- `beforeCreate`
-- `created`
 
-2、设置阶段：
- - `setup`
- 
-3、挂载阶段
-- `beforeMount`
-- `onBeforeMount`
-- `mounted`
-- `onMounted`
-
-4、更新阶段
-- `beforeUpdate`
-- `onBeforeUpdate`
-- `updated`
-- `onUpdated`
-
-5、卸载阶段
-- `beforeUnmount`
-- `onBeforeUnmount`
-- `unmounted`
-- `onUnmounted`
-
-## 13、v-if和v-show的区别？
+## 12、v-if和v-show的区别？
 1、从DOM层面看：`v-if`是销毁/重建，`v-show`是隐藏/显示
 
 2、从性能层面看：`v-if`的切换成本较高，`v-show`的切换成本较低
 
 3、从内存层面看：`v-if`会占用更多的内存，`v-show`不会占用内存
 
-## 14、nextTick的作用和使用场景？
+## 13、nextTick的作用和使用场景？
 `vue`是异步更新DOM,修改数据之后不会立刻更新DOM,`$nextTick`就是等DOM页面彻底渲染更新完成之后再执行回调函数
 
 **使用场景**
 修改数据之后，立刻想要操作DOM、获取DOM元素宽高、获取表单焦点都必须放在`nextTick`里面执行
 
-## 15、vue3对数组主要的修改有哪些？
-1、使用 `Proxy` 替代 `Object.defineProperty`
 
-2️、不再需要重写数组方法
 
-3️、支持直接通过索引、`length` 修改数组并触发更新
-
-4️、所有数组操作天然响应式，无需 `$set`
-
-## 16、使用v-for的时候不使用key可以吗？可以使用index做为key？
+## 14、使用v-for的时候不使用key可以吗？可以使用index做为key？
 - key的作用：key是元素唯一标识，帮助虚拟DOM做diff对比，精准识别新旧节点，避免DOM复用错乱，提升渲染效率
 - 为啥不推荐用index当key：数组增删、排序时，index序号会重新变动，导致diff算法错误复用DOM,引发数据渲染错乱、表单数据错位等问题
 仅静态纯展示。无增删改查的简单列表可以临时使用index,业务动态列表优先使用唯一id
 
 
-## 17、封装组件是怎么封装的？
+## 15、封装组件是怎么封装的？
 - 封装组件时，我会先明确组件职责，
 
 - 通过 `props` 接收数据，`emits` 向外通知事件，
@@ -198,14 +168,14 @@ vue3生命周期
 
 
 
-## 18、说说vue2和vue3的生命周期具体有哪些区别，平时开发常用哪些钩子？
+## 16、说说vue2和vue3的生命周期具体有哪些区别，平时开发常用哪些钩子？
 `vue3`相比`vue2`新增了`setup`入口函数，作为组合式api起点
 
 生命周期名称也做了调整，`Vue2`的`beforeDestory`改成了`Vue3`的`beforeUnmount`,`destory`改成了`onUnmounted`
 
 平常日常开发主要是使用`onMounted`,页面DOM渲染完成后用来请求接口、初始化数据、日常项目里面用的最多
 
-## 19、`setup()`和`<script setup>`区别，setup执行时机、参数、返回值规则，以及setup里面为什么不能用this?
+## 17、`setup()`和`<script setup>`区别，setup执行时机、参数、返回值规则，以及setup里面为什么不能用this?
 👉 `setup()`和`<script setup>`区别
 
 无需手动`return`变量/方法，组件、指令自动注册，支持顶层`await`,代码更简洁
@@ -229,12 +199,12 @@ vue3生命周期
 
 执行顺序是`setup`->`beforeCreate`->`created`
 
-## 20、Vue组件中的data为什么必须写成函数形式？
+## 18、Vue组件中的data为什么必须写成函数形式？
 因为组件会被多次复用，如果`data`写成对象，那么所有组件实例会共用同一个对象，数据会互相污染
 
 写成函数，每次创建组件都会创建返回一个全新的对象，每个组件拥有自己独立的数据作用域，互不干扰
 
-## 21、vue插槽有几种，分别怎么用？
+## 19、vue插槽有几种，分别怎么用？
 1、默认插槽：`<template></template>`
 
 2、具名插槽：`<template slot="header"></template>`
@@ -249,7 +219,7 @@ vue3生命周期
 
 3、作用域插槽：用于在组件内部渲染作用域内容
 
-## 22、vue如何实现路由懒加载？
+## 20、vue如何实现路由懒加载？
 路由懒加载就是把路由组件拆分打包，用到时再加载，减少首屏加载体积，写法用es6的`import`语法实现
 ```js
 const Home = () => import('@/views/Home.vue')
@@ -257,7 +227,7 @@ const Home = () => import('@/views/Home.vue')
 配置路由时引入即可，Vue3搭配Vite也同样适用，能够有效优化首屏加载速度。
 
 
-## 23、vue2/vue3双向数据绑定原理以及优缺点？
+## 21、vue2/vue3双向数据绑定原理以及优缺点？
 - vue2 : `Object.defineProperty`劫持对象属性
     - 仅能监听已有属性的读取和修改，无法监听属性新增、删除
     - 数组无法监听下标赋值、长度变更，只能靠重写7个原型方法临时兼容
@@ -271,7 +241,7 @@ const Home = () => import('@/views/Home.vue')
 
 双向数据绑定本质：数据劫持+发布订阅模式
 
-## 24、组合式API和选项式API的区别，分别适合什么场景？
+## 22、组合式API和选项式API的区别，分别适合什么场景？
 - 选项式API：`data`、`methods`、`computed`等分开写，
     - 优点：简单、上手快，结构清晰
     - 缺点：同一业务逻辑分散在各个选项里，不好维护，大项目代码杂乱，复用逻辑复杂，适用于小型项目
@@ -280,7 +250,7 @@ const Home = () => import('@/views/Home.vue')
     - 方便抽离公共逻辑Hooks复用
     - 完美适配ts,类型友好
     - 代码灵活，自由度更高，适合中大型项目
-## 25、vue3生命周期钩子说几个，对应作用？
+## 23、vue3生命周期钩子说几个，对应作用？
 - `setup`:组合式API入口，早于所有的生命周期，初始化逻辑，定义响应式数据，没有`this`指向
 - `onBeforeMount`:挂载前，DOM没有生成
 - `onMounted`:挂载完成后，DOM已经生成
@@ -289,10 +259,10 @@ const Home = () => import('@/views/Home.vue')
 - `onBeforeUnmount`:卸载前，DOM已经生成
 - `onUnmounted`:卸载完成后，DOM已经销毁
 
-## 26、vue3怎么封装全局组件？
+## 24、vue3怎么封装全局组件？
 单个全局组件在`main.js`用`app.component`注册,项目多用批量自动注册，局部组件直接引入使用
 
-## 27、watch和watchEffect的区别？
+## 25、watch和watchEffect的区别？
 - 执行逻辑：
     - `watch`需要手动声明监听目标，数据变化才触发回调，默认初始化不执行
     - `watchEffect`会自动追踪函数内所有响应式依赖，初始化立即执行一次，依赖变化就重新执行
@@ -303,7 +273,7 @@ const Home = () => import('@/views/Home.vue')
     - 需要精细控制、拿到新旧值、监听明确数据变化用`watch`
     - 依赖较多，逻辑随依赖自动联动，无需区分变化来源用`watchEffect`
 
-## 28、vue3怎么实现响应式+diff完整更新流程？
+## 26、vue3怎么实现响应式+diff完整更新流程？
 一句话总览
 > 数据变化 → 响应式系统触发 effect → 组件重新执行 render → 生成新的 VNode → patch（Diff）→ 最小化更新真实 DOM
 
@@ -426,7 +396,7 @@ Vue3 在 编译阶段​ 已经做了：
 👉  一句话总结
 > Vue3 的更新流程是：数据通过 Proxy 响应式系统触发依赖更新，组件作为 effect 被调度进入异步更新队列，重新执行 render 生成新的 VNode，然后通过编译期优化（PatchFlag / Block Tree）缩小 Diff 范围，运行时使用 Fast Diff 和最长递增子序列算法最小化 DOM 移动，最终实现高性能更新。
 
-## 29、vue3 diff算法？
+## 27、vue3 diff算法？
 👉  总结
 
 - 相同节点判断规则
@@ -442,7 +412,8 @@ Vue3 在 编译阶段​ 已经做了：
     若四轮匹配失败，则通过key在旧节点集中查找可复用节点，最终完成节点的增、删、移操作
 - vue3 `Diff`优化
     - 编译期优化(`PatchFlag / Block Tree`):编译时标记动态节点、动态属性，运行时`Diff`跳过静态节点，只对比标记过的动态内容，缩小对比范围
-    - 列表`Diff`:使用`最长递增子序列`，对于无法通过首尾匹配的乱序列表，通过最长递增子序列算出无需移动的稳定阶段，其余节点仅做最少次数的移动、新增、删除、相比`Vue2`进一步减少`DOM`操作，优化长列表性能
+    - 列表`Diff`:使用`最长递增子序列`，对于无法通过首尾匹配的乱序列表，通过最长递增子序列算出无需移动的稳定节点，其余节点仅做最少次数的移动、新增、删除、相比`Vue2`进一步减少`DOM`操作，优化长列表性能
 
 `key` 的作用是帮助 `Diff` 精确定位可复用节点，避免使用 `index` 作为 `key` 以防列表变动导致节点误复用
+
 

@@ -36,6 +36,6 @@ webpack是一个现代的前端模块打包工具，用于构建和优化web程�
 - `entry`：不同页面entry里业务组件代码的差异部分，会经常改动
 
 ## 6、webpack和vite的区别
-- webpack是一个打包工具，静态构建，在项目工程化、依赖、打包、构建等过程发挥作用
-- vite是一个更上层的工具链方案，对标的是（webapck+针对web的常用配置+webpack-dev-server），旨在提供快速的开发体验
+- `webpack`是一个打包工具，静态构建，在项目工程化、依赖、打包、构建等过程发挥作用
+- `vite`是一个更上层的工具链方案，对标的是（`webpack`+针对web的常用配置+`webpack-dev-server`），旨在提供快速的开发体验
 

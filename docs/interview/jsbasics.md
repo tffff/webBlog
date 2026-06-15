@@ -428,6 +428,10 @@ let newArr = arr.reduce((prev, cur) => {
     return prev;
   }
 }, []);
+👉 扩展
+- 数据量小：双重for循环
+- 简单类型：new Set()
+- 兼容性：适合不支持es6语法的情况
 ```
 
 ### 7、js 内置对象有哪些？

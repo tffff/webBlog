@@ -4,6 +4,10 @@ const navs = [
     link: '/myblog',
   },
   {
+    title: 'AI应用',
+    link: '/aiapp',
+  },
+  {
     title: '算法',
     link: '/algorithm',
   },
