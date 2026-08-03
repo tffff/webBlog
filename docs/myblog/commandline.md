@@ -163,7 +163,20 @@ git merge [source branch] [target branch]
 ### 17、将更改存储在隐藏的工作目录中
 
 ```bash
+# 默认是暂存的修改的文件，新增的文件不会加入暂存
 git stash
+
+# 可以指定缓存的文件
+git stash [file-name.txt]
+
+# 暂存新增+修改的文件
+git stash push -u -m "feat: 含新文件"
+
+# 可以查看隐藏的条目
+git stash list
+
+# 取出最新的一条缓存
+git stash pop
 ```
 
 ### 18、删除所有隐藏的条目

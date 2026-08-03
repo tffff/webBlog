@@ -117,6 +117,12 @@ const sidebar = {
         { title: 'Agent 智能体', link: '/aiapp/agent' },
       ],
     },
+    {
+      title: '后端知识',
+      children: [
+        { title: 'Node.js 服务端', link: '/backend/nodeserver' },
+      ],
+    },
   ],
   '/algorithm': [
     {

@@ -8,6 +8,10 @@ const navs = [
     link: '/aiapp',
   },
   {
+    title: '后端知识',
+    link: '/backend',
+  },
+  {
     title: '算法',
     link: '/algorithm',
   },
