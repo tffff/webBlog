@@ -2,9 +2,7 @@ const sidebar = {
   '/myblog': [
     {
       title: '关于博客',
-      children: [
-        { title: '博客简介', link: '/myblog' },
-      ],
+      children: [{ title: '博客简介', link: '/myblog' }],
     },
     {
       title: '开发工具',
@@ -106,7 +104,7 @@ const sidebar = {
   ],
   '/aiapp': [
     {
-      title: 'AI应用',
+      title: 'AI应用1',
       children: [
         { title: '大模型应用开发概述', link: '/aiapp/overview' },
         { title: '提示词工程', link: '/aiapp/prompt' },
@@ -117,22 +115,17 @@ const sidebar = {
         { title: 'Agent 智能体', link: '/aiapp/agent' },
       ],
     },
-
   ],
   '/backend': [
     {
       title: '后端知识',
-      children: [
-        { title: 'Node.js 服务端', link: '/backend/nodeserver' },
-      ],
+      children: [{ title: 'Node.js 服务端', link: '/backend/nodeserver' }],
     },
   ],
   '/algorithm': [
     {
       title: '关于算法',
-      children: [
-        { title: '数据结构与算法', link: '/algorithm' },
-      ],
+      children: [{ title: '数据结构与算法', link: '/algorithm' }],
     },
     {
       title: '算法',
@@ -146,9 +139,7 @@ const sidebar = {
   '/interview': [
     {
       title: '关于面试',
-      children: [
-        { title: '面试题汇总', link: '/interview' },
-      ],
+      children: [{ title: '面试题汇总', link: '/interview' }],
     },
     {
       title: '基础',
