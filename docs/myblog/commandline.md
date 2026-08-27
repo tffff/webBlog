@@ -175,8 +175,11 @@ git stash push -u -m "feat: 含新文件"
 # 可以查看隐藏的条目
 git stash list
 
-# 取出最新的一条缓存
+# 取出最新的一条缓存并删除缓存，默认取最新的一条缓存
 git stash pop
+
+# 取出缓存，但是不删除缓存，默认取最新的一条缓存
+git stash apply
 ```
 
 ### 18、删除所有隐藏的条目
